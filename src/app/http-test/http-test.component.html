@@ -1,0 +1,13 @@
+
+<div >
+  <svg viewBox="0 0 1000 1400" preserveAspectRatio="none">
+  //label
+  <text *ngFor="let spec of finalTask; let i = index" class="ellipsis" x="0" [attr.y]="i*35+20" font-size="15px">{{spec.taskLabel}} </text>
+  //lines
+    <line *ngFor="let no of finalInterval; let i = index" y1="0" [attr.x2]="i*40+200" [attr.x1]="i*40+200" [attr.y2]="heightSpan*35" style="stroke: gray; stroke-width: 1px"  />
+ //time interval
+    <text *ngFor="let no of finalInterval; let i = index" [attr.x]="i*40+195" [attr.y]="heightSpan*35+20">{{no}} </text>
+  //rectangle
+  <rect *ngFor="let spec of finalTask; let i = index" [attr.x]="spec.startPoint*40+200" [attr.y]="i*35" fill="skyblue" [attr.width]="spec.width*40*span" height="30"/>
+  </svg>
+</div> 
